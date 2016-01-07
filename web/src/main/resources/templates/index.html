@@ -1,0 +1,13 @@
+{{> parts/header}}
+
+    <h2>
+        hello{{#request}}{{#userPrincipal}}, {{name}}{{/userPrincipal}}{{/request}}! (:
+    </h2>
+    <p>do u know them?</p>
+    <ul>
+        {{#users}}
+            <li>{{username}}</li>
+        {{/users}}
+    </ul>
+
+{{> parts/footer}}

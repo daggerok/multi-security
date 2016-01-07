@@ -1,0 +1,14 @@
+project(":data") {
+    jar { baseName = "data" }
+
+    dependencies {
+        compile "org.springframework.boot:spring-boot-starter-data-jpa",
+                "org.springframework.boot:spring-boot-starter-data-rest",
+                "org.springframework.data:spring-data-rest-hal-browser",
+                "org.springframework.boot:spring-boot-starter-hateoas",
+                "org.projectlombok:lombok:${lombokVersion}",
+                "com.h2database:h2"
+
+        testCompile "org.springframework.restdocs:spring-restdocs-mockmvc"
+    }
+}

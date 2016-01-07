@@ -1,0 +1,6 @@
+dependencies {
+    compile project(":data"),
+            project(":web")
+}
+
+task wrapper(type: Wrapper) { gradleVersion = gradleVersion }

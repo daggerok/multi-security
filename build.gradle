@@ -1,0 +1,9 @@
+buildscript {
+	repositories { jcenter() }
+	dependencies { classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}" }
+}
+
+apply from: "gradle/allprojects.gradle"
+apply from: "gradle/parent.gradle"
+apply from: "gradle/data.gradle"
+apply from: "gradle/web.gradle"
