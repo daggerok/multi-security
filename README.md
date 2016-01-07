@@ -66,8 +66,9 @@ HTTP/1.1 200 OK
 ...
 ```
 
-```html
 and i've got my page
+
+```html
     <h2>
         hello, max! (:
     </h2>
