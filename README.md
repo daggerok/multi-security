@@ -1,4 +1,4 @@
-multi-security
+multi-security [![build](https://api.travis-ci.org/daggerok/multi-security.svg?branch=master)](https://travis-ci.org/daggerok/multi-security)
 ==============
 
 ### in general...
