@@ -1,15 +1,20 @@
 package daggerok.multi.web.config.security;
 
+import daggerok.multi.web.config.security.userdetails.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.csrf.CsrfFilter;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityCfg extends WebSecurityConfigurerAdapter {
+public class WebSecurityCfg extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private CsrfTokenGeneratorFilter csrfTokenGeneratorFilter;
+
     @Autowired
     private UserDetailsServiceImpl userDetailsServiceImpl;
 
@@ -20,6 +25,7 @@ public class SecurityCfg extends WebSecurityConfigurerAdapter {
                 .frameOptions()
                 .sameOrigin()
                 .and()
+            .addFilterAfter(csrfTokenGeneratorFilter, CsrfFilter.class) // populate _csrf into header
             .csrf() // csrf token
                 .ignoringAntMatchers("/login") // allow curl -XPOST localhost:8080/login -d 'username&password'
                 .ignoringAntMatchers("/logout") // allow curl -XPOST localhost:8080/logout

@@ -1,4 +1,4 @@
-package daggerok.multi.web.config.security;
+package daggerok.multi.web.config.security.userdetails;
 
 import daggerok.multi.data.user.User;
 import lombok.NoArgsConstructor;
