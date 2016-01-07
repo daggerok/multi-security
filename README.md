@@ -100,8 +100,8 @@ $ curl -i -XPOST localhost:8080/logout
 
 ### custom csrf filter
 
-After adding ouw custome csrf filter (see daggerok.multi.web.config.security.CsrfTokenGeneratorFilter)
-and configuring daggerok.multi.web.config.security.WebSecurityCfg to use it
+After adding ouw custom csrf filter (see ```daggerok.multi.web.config.security.CsrfTokenGeneratorFilter```)
+and configuring ```daggerok.multi.web.config.security.WebSecurityCfg``` to use it
 
 ```java
 public class WebSecurityCfg extends WebSecurityConfigurerAdapter {

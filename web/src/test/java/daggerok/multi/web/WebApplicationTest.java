@@ -19,25 +19,28 @@ import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 //import org.springframework.test.context.web.WebAppConfiguration;
-
 //@WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebIntegrationTest({"server.port:0", "management.port:0"})
 @SpringApplicationConfiguration(classes = WebApplication.class)
 public class WebApplicationTest {
-    protected MockMvc mockMvc;
-    protected MediaType jsonContentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
-            MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
     @Value("${local.server.port:0}")
     private int port;
-    @Autowired
-    private WebApplicationContext webApplicationContext;
-    @Autowired
-    private ApplicationContext applicationContext;
 
     protected String url() {
         return "http://localhost:" + port;
     }
+
+    @Autowired
+    private WebApplicationContext webApplicationContext;
+
+    @Autowired
+    private ApplicationContext applicationContext;
+
+    protected MockMvc mockMvc;
+
+    protected MediaType jsonContentType = new MediaType(MediaType.APPLICATION_JSON.getType(),
+            MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
 
     @Before
     public void setUp() throws Exception {
@@ -52,16 +55,18 @@ public class WebApplicationTest {
     }
 
     @Test
-    public void testBeans() {
-        assertTrue("webApplication bean wasn't found", applicationContext.containsBean("webApplication"));
-
+    public void testApplicationBeans() {
         assertTrue("webCfg bean wasn't found", applicationContext.containsBean("webCfg"));
         assertTrue("initializer bean wasn't found", applicationContext.containsBean("initializer"));
 
-        assertTrue("webSecurityCfg bean wasn't found", applicationContext.containsBean("webSecurityCfg"));
         assertTrue("userDetailsImpl bean wasn't found", applicationContext.containsBean("userDetailsImpl"));
         assertTrue("userDetailsServiceImpl bean wasn't found", applicationContext.containsBean("userDetailsServiceImpl"));
 
+        assertTrue("webSecurityCfg bean wasn't found", applicationContext.containsBean("webSecurityCfg"));
+        assertTrue("csrfTokenGeneratorFilter bean wasn't found", applicationContext.containsBean("csrfTokenGeneratorFilter"));
+
         assertTrue("indexController bean wasn't found", applicationContext.containsBean("indexController"));
+
+        assertTrue("webApplication bean wasn't found", applicationContext.containsBean("webApplication"));
     }
 }
