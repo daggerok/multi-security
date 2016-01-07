@@ -1,6 +1,12 @@
 multi-security [![build](https://api.travis-ci.org/daggerok/multi-security.svg?branch=master)](https://travis-ci.org/daggerok/multi-security)
 ==============
 
+tags:
+- spring boot
+- spring securoty
+- gradle multi project
+- cli login using curl with csrf
+
 ### in general...
 
 ...we provide login form, but what if some one don't like it?
