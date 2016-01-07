@@ -69,6 +69,7 @@ HTTP/1.1 200 OK
 and i've got my page
 
 ```html
+<skip/>
     <h2>
         hello, max! (:
     </h2>
