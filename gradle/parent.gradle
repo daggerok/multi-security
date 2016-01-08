@@ -1,7 +1,8 @@
 apply plugin: "idea"
 
 dependencies {
-    compile project(":data"),
+    compile project(":utils"),
+            project(":data"),
             project(":web")
 }
 

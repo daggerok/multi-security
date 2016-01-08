@@ -1,0 +1,7 @@
+project(":utils") {
+    jar { baseName = "utils" }
+
+    dependencies {
+        compile "org.springframework.boot:spring-boot-starter-security"
+    }
+}

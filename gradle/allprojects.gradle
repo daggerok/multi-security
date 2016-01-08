@@ -17,7 +17,8 @@ allprojects {
     repositories { jcenter() }
 
     dependencies {
-        compile "org.springframework.boot:spring-boot-starter"
+        compile "org.springframework.boot:spring-boot-starter",
+                "org.projectlombok:lombok:${lombokVersion}"
 
         testCompile "org.springframework.boot:spring-boot-starter-test"
     }
