@@ -4,21 +4,28 @@ multi-security [![build](https://api.travis-ci.org/daggerok/multi-security.svg?b
 **tags**
 
 - spring boot
-- spring boot mustache
+- spring + mustache template engine
 - spring security with csrf
 - gradle multi project
 - curl cli
 
-### using spring boot
+### checkout sources
+
+```shell
+$ git clone https://github.com/daggerok/war-multi-security.git && cd $_
+$ ./gradlew build
+```
+
+### run spring boot embedded container
+
+```shell
+$ java -jar web/build/libs/*.jar
+```
+
+### run spring boot using gradle
 
 ```shell
 $ ./gradlew run
-```
-### using jdk
-
-```shell
-$ ./gradlew build
-$ java -jar web/build/libs/*.jar
 ```
 
 ### in general...
