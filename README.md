@@ -12,7 +12,13 @@ multi-security [![build](https://api.travis-ci.org/daggerok/multi-security.svg?b
 ### using spring boot
 
 ```shell
-$ ./gradlew clean build run
+$ ./gradlew run
+```
+### using jdk
+
+```shell
+$ ./gradlew build
+$ java -jar web/build/libs/*.jar
 ```
 
 ### in general...
