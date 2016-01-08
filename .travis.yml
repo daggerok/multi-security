@@ -1,10 +1,10 @@
 language: java
 jdk:
   - oraclejdk8
-cache:
-  directories:
-    - gradle
-    - $HOME/.gradle
+#cache:
+#  directories:
+#    - gradle
+#    - $HOME/.gradle
 notifications:
   on_failure: change # always|never
   on_success: change
