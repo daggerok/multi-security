@@ -148,10 +148,10 @@ so now for doing login we don't have to pars html at all! all needed information
 
 let's do login
 
-1
+**1**
 
 ```shell
-$ curl -i localhost:8080/
+$ curl -i http://localhost:8080/
 ...
 X-CSRF-HEADER: X-CSRF-TOKEN
 X-CSRF-PARAM: _csrf
@@ -160,10 +160,10 @@ X-CSRF-TOKEN: d5b79275-cc44-4088-ba64-f75215483880
 Location: http://localhost:8080/login
 ```
 
-2
+**2**
 
 ```shell
-$ curl -i -XPOST localhost:8080/login -d 'username=max&password=max&_csrf=d5b79275-cc44-4088-ba64-f75215483880'
+$ curl -i -XPOST http://localhost:8080/login -d 'username=max&password=max&_csrf=d5b79275-cc44-4088-ba64-f75215483880'
 ...
 Set-Cookie: JSESSIONID=E16EE9D5C30E8DA09E62F858A9E47223; Path=/; HttpOnly
 X-CSRF-TOKEN: 2f830e23-3056-4639-a162-b53aa9487a0d
@@ -171,10 +171,10 @@ Location: http://localhost:8080/
 ...
 ```
 
-3
+**3**
 
 ```shell
-$ curl -i localhost:8080/ --cookie 'JSESSIONID=E16EE9D5C30E8DA09E62F858A9E47223'
+$ curl -i http://localhost:8080/ --cookie 'JSESSIONID=E16EE9D5C30E8DA09E62F858A9E47223'
 HTTP/1.1 200 OK
 ...
 ```
