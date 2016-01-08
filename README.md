@@ -4,9 +4,9 @@ multi-security [![build](https://api.travis-ci.org/daggerok/multi-security.svg?b
 **tags**
 
 - spring boot
-- spring security
+- spring security with csrf
 - gradle multi project
-- cli auth login using curl with csrf
+- curl cli
 
 ### using spring boot
 
