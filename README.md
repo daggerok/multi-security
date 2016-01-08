@@ -4,6 +4,7 @@ multi-security [![build](https://api.travis-ci.org/daggerok/multi-security.svg?b
 **tags**
 
 - spring boot
+- spring boot mustache
 - spring security with csrf
 - gradle multi project
 - curl cli
