@@ -238,6 +238,6 @@ public String index(Model model, HttpServletRequest request) {
 {{/request}}
 ```
 
-NOTE: in case error occurs, we must override BasicErrorController, see: ```daggerok.multi.web.config.error.ErrorControllerImpl```
+*NOTE: in case error occurs, we must override BasicErrorController, (see: ```daggerok.multi.web.config.error.ErrorControllerImpl```)*
 
 nice :)
