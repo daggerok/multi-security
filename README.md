@@ -139,7 +139,7 @@ HTTP/1.1 200 OK
 X-Frame-Options: SAMEORIGIN
 X-CSRF-HEADER: X-CSRF-TOKEN
 X-CSRF-PARAM: _csrf
-Set-Cookie: JSESSIONID=2B17B9D947652E3F88E313AE29AC8F8F; Path=/; HttpOnly
+...
 X-CSRF-TOKEN: 78d297fa-fae5-48b7-b6c3-c73b17444e59
 ...
 ```
@@ -169,9 +169,10 @@ $ curl -i http://localhost:8080/
 ...
 X-CSRF-HEADER: X-CSRF-TOKEN
 X-CSRF-PARAM: _csrf
-Set-Cookie: JSESSIONID=4F75E411E1C45785F8C5AA5462B914FF; Path=/; HttpOnly
+...
 X-CSRF-TOKEN: d5b79275-cc44-4088-ba64-f75215483880
 Location: http://localhost:8080/login
+...
 ```
 
 **2**
@@ -180,7 +181,7 @@ Location: http://localhost:8080/login
 $ curl -i -XPOST http://localhost:8080/login -d 'username=max&password=max&_csrf=d5b79275-cc44-4088-ba64-f75215483880'
 ...
 Set-Cookie: JSESSIONID=E16EE9D5C30E8DA09E62F858A9E47223; Path=/; HttpOnly
-X-CSRF-TOKEN: 2f830e23-3056-4639-a162-b53aa9487a0d
+...
 Location: http://localhost:8080/
 ...
 ```
