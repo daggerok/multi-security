@@ -7,7 +7,7 @@ cache:
     - gradle
     - $HOME/.gradle
 script:
-  - ./gradlew build
+  - ./gradlew clean build
 notifications:
   on_failure: change # always|never
   on_success: change
