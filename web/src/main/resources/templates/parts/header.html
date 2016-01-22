@@ -3,12 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>App</title>
-{{#request}}
-    {{#contextPath}}
-<link rel="stylesheet" href="{{.}}/bootstrap.css">
-<link rel="stylesheet" href="{{.}}/app.css">
-    {{/contextPath}}
-{{/request}}
+<link rel="stylesheet" href="{{springMacroRequestContext.request.contextPath}}/bootstrap.css">
+<link rel="stylesheet" href="{{springMacroRequestContext.request.contextPath}}/app.css">
 </head>
 <body>
 <div class="container">
@@ -16,7 +12,7 @@
 <h1 class="text-left">h e a d e r</h1>
 {{#request}}
     {{#userPrincipal}}
-<form method="post" action="/logout"><button class="btn btn-success" name="logout" value="logout">logout</button></form>
+<form method="post" action="{{springMacroRequestContext.request.contextPath}}/logout"><button class="btn btn-success" name="logout" value="logout">logout</button></form>
     {{/userPrincipal}}
 {{/request}}
 </header>

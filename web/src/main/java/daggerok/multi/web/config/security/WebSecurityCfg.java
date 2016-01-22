@@ -28,11 +28,11 @@ public class WebSecurityCfg extends WebSecurityConfigurerAdapter {
                 .and()
             .addFilterAfter(csrfTokenGeneratorFilter, CsrfFilter.class) // populate _csrf into header
             .csrf() // csrf token
+                .ignoringAntMatchers("/*.css")
                 .ignoringAntMatchers("/login") // allow curl -XPOST localhost:8080/login -d 'username&password'
                 .ignoringAntMatchers("/logout") // allow curl -XPOST localhost:8080/logout
                 .ignoringAntMatchers("/browser/**") // HAL browser
                 .ignoringAntMatchers("/console/**") // h2 console
-                .ignoringAntMatchers("/*.css")
                 .and()
             .authorizeRequests()
                 .antMatchers("/browser/**").permitAll()
@@ -41,6 +41,8 @@ public class WebSecurityCfg extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
+                .loginPage("/login")
+                .failureUrl("/login")
                 .permitAll()
                 .and()
             .logout()

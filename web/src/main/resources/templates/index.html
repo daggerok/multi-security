@@ -10,4 +10,14 @@
         {{/users}}
     </ul>
 
+{{^role}}
+<script type="text/javascript">
+    window.addEventListener('load', function() {
+        alert("hello? o.O")
+    });
+</script>
+{{/role}}
+
+{{#role}}acceptable role: {{role}}{{/role}}
+
 {{> parts/footer}}

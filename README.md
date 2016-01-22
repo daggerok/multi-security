@@ -230,12 +230,8 @@ public String index(Model model, HttpServletRequest request) {
 ```html
 <head>
 ...
-{{#request}}
-    {{#contextPath}}
-<link rel="stylesheet" href="{{.}}/bootstrap.css">
-<link rel="stylesheet" href="{{.}}/app.css">
-    {{/contextPath}}
-{{/request}}
+<link rel="stylesheet" href="{{springMacroRequestContext.request.contextPath}}/bootstrap.css">
+<link rel="stylesheet" href="{{springMacroRequestContext.request.contextPath}}/app.css">
 ```
 
 *NOTE: in case error occurs, we must override BasicErrorController, (see: ```daggerok.multi.web.config.error.ErrorControllerImpl```)*

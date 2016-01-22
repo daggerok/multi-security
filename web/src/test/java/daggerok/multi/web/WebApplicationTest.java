@@ -65,6 +65,7 @@ public class WebApplicationTest {
         assertTrue("webSecurityCfg bean wasn't found", applicationContext.containsBean("webSecurityCfg"));
         assertTrue("csrfTokenGeneratorFilter bean wasn't found", applicationContext.containsBean("csrfTokenGeneratorFilter"));
 
+        assertTrue("loginController bean wasn't found", applicationContext.containsBean("loginController"));
         assertTrue("indexController bean wasn't found", applicationContext.containsBean("indexController"));
 
         assertTrue("webApplication bean wasn't found", applicationContext.containsBean("webApplication"));

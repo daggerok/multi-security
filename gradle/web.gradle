@@ -6,6 +6,7 @@ project(":web") {
                 "org.springframework.boot:spring-boot-starter-security",
                 "org.springframework.boot:spring-boot-starter-web",
                 "org.springframework.boot:spring-boot-devtools",
+                "com.github.spullara.mustache.java:compiler:0.9.1",
                 project(":utils"),
                 project(":data")
     }
