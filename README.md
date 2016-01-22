@@ -217,14 +217,6 @@ there is a workaround: always use contestPath value in template engine
 
 to fix wrong 404 issue on static content we must provide access to the httpServlerRequest.getContextPath()
 
-*in controller (see: ```web/src/main/java/daggerok/multi/web/ctrl/IndexController.java```)*
-
-```java
-@RequestMapping("/")
-public String index(Model model, HttpServletRequest request) {
-    model.addAttribute("request", request);
-```
-
 *in template (see: ```web/src/main/resources/templates/parts/header.html```)*
 
 ```html
