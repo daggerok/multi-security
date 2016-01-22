@@ -12,7 +12,9 @@
 <h1 class="text-left">h e a d e r</h1>
 {{#request}}
     {{#userPrincipal}}
-<form method="post" action="{{springMacroRequestContext.request.contextPath}}/logout"><button class="btn btn-success" name="logout" value="logout">logout</button></form>
+<form method="post" action="{{springMacroRequestContext.request.contextPath}}/logout">
+    <button class="btn btn-success" name="logout" value="logout">logout</button>
+</form>
     {{/userPrincipal}}
 {{/request}}
 </header>
